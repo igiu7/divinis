@@ -1,0 +1,54 @@
+plugins {
+    id "com.gradleup.shadow"
+}
+
+architectury {
+    fabric()
+}
+
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+}
+
+configurations {
+    common {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+
+    shadowBundle {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+    modImplementation "dev.architectury:architectury-fabric:${rootProject.architectury_api_version}"
+    modImplementation("dev.ftb.mods:ftb-library-fabric:${rootProject.ftb_library_version}") { transitive = false }
+    modImplementation("maven.modrinth:diegesis-api:${rootProject.diegesis_fabric}") { transitive = false }
+
+    common(project(path: ":common", configuration: "namedElements")) { transitive false }
+    shadowBundle project(path: ":common", configuration: "transformProductionFabric")
+}
+
+processResources {
+    def props = [version: project.version, mod_id: rootProject.mod_id, mod_name: rootProject.mod_name,
+                 mod_license: rootProject.mod_license, mod_authors: rootProject.mod_authors,
+                 mod_description: rootProject.mod_description, minecraft_version: rootProject.minecraft_version]
+    inputs.properties props
+    filesMatching("fabric.mod.json") { expand props }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadowBundle]
+    archiveClassifier = "dev-shadow"
+}
+
+remapJar {
+    inputFile.set shadowJar.archiveFile
+}

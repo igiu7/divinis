@@ -1,0 +1,15 @@
+architectury {
+    common rootProject.enabled_platforms.split(",")
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/divinis.accesswidener")
+}
+
+dependencies {
+    // only for the @Environment annotations and the mixin classes; the common code never calls Fabric
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modApi "dev.architectury:architectury:${rootProject.architectury_api_version}"
+    modCompileOnly("dev.ftb.mods:ftb-library:${rootProject.ftb_library_version}") { transitive = false }
+    modCompileOnly("maven.modrinth:diegesis-api:${rootProject.diegesis_fabric}") { transitive = false }
+}

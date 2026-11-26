@@ -1,0 +1,11 @@
+accessWidener v2 named
+
+# the multipart creatures take the entity ids right after their own (as the ender dragon does)
+accessible field net/minecraft/world/entity/Entity ENTITY_COUNTER Ljava/util/concurrent/atomic/AtomicInteger;
+# the Labyrinth tells full buckets from empty ones
+accessible field net/minecraft/world/item/BucketItem content Lnet/minecraft/world/level/material/Fluid;
+# Divinis' own particle types
+accessible method net/minecraft/core/particles/SimpleParticleType <init> (Z)V
+accessible class net/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration
+# the fantasy armour's capes go on the player renderer
+accessible method net/minecraft/client/renderer/entity/LivingEntityRenderer addLayer (Lnet/minecraft/client/renderer/entity/layers/RenderLayer;)Z

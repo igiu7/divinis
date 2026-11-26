@@ -1,0 +1,89 @@
+plugins {
+    id "com.gradleup.shadow"
+}
+
+architectury {
+    neoForge()
+}
+
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+    neoForge {
+        // NeoForge reads access transformers: the common access widener becomes META-INF/accesstransformer.cfg
+        convertAccessWideners(tasks.named("remapJar"), "divinis.accesswidener")
+    }
+}
+
+configurations {
+    common {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentNeoForge.extendsFrom common
+
+    shadowBundle {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+
+dependencies {
+    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
+    modImplementation "dev.architectury:architectury-neoforge:${rootProject.architectury_api_version}"
+    modImplementation("dev.ftb.mods:ftb-library-neoforge:${rootProject.ftb_library_version}") { transitive = false }
+    modImplementation("maven.modrinth:diegesis-api:${rootProject.diegesis_neoforge}") { transitive = false }
+
+    common(project(path: ":common", configuration: "namedElements")) { transitive false }
+    shadowBundle project(path: ":common", configuration: "transformProductionNeoForge")
+}
+
+processResources {
+    def props = [version: project.version, mod_id: rootProject.mod_id, mod_name: rootProject.mod_name,
+                 mod_license: rootProject.mod_license, mod_authors: rootProject.mod_authors,
+                 mod_description: rootProject.mod_description, minecraft_version_range: rootProject.minecraft_version_range,
+                 neoforge_version: rootProject.neoforge_version, loader_version_range: rootProject.neoforge_loader_version_range]
+    inputs.properties props
+    filesMatching("META-INF/neoforge.mods.toml") { expand props }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadowBundle]
+    archiveClassifier = "dev-shadow"
+}
+
+remapJar {
+    inputFile.set shadowJar.archiveFile
+}
+
+// ---------------------------------------------------------------
+// Auto-deploy: po buildzie kopiuje jar do folderow mods z wlasciwosci
+// divinis_deploy_dirs (sciezki rozdzielone ';', np. w ~/.gradle/gradle.properties)
+// i usuwa z nich poprzednie wersje tego moda. Bez niej nic nie kopiuje.
+// ---------------------------------------------------------------
+def deployDirs = (findProperty('divinis_deploy_dirs') ?: '').toString().split(';')*.trim().findAll { it }
+
+tasks.register('deployJar') {
+    group = 'build'
+    description = 'Kopiuje jar moda (NeoForge) do folderow mods, podmieniajac stare wersje'
+    dependsOn tasks.named('remapJar')
+    def jarFileProvider = tasks.named('remapJar').flatMap { it.archiveFile }
+    List<String> dirs = deployDirs
+    inputs.file(jarFileProvider)
+    doLast {
+        File jarFile = jarFileProvider.get().asFile
+        dirs.each { String path ->
+            File dir = new File(path)
+            dir.mkdirs()
+            dir.listFiles()?.each { File f ->
+                if (f.isFile() && f.name.startsWith("divinis-") && f.name.endsWith(".jar")) f.delete()
+            }
+            java.nio.file.Files.copy(jarFile.toPath(), new File(dir, jarFile.name).toPath(),
+                    java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+            println "Deployed ${jarFile.name} -> ${dir}"
+        }
+    }
+}
+
+tasks.named('build') { finalizedBy 'deployJar' }
