@@ -7,6 +7,8 @@ import java.util.function.Supplier;
 
 import dev.ftb.mods.ftblibrary.icon.Icon;
 import dev.ftb.mods.ftblibrary.icon.Icons;
+import dev.ftb.mods.ftblibrary.icon.ItemIcon;
+import net.minecraft.world.item.Items;
 
 /** The modules shown on the rail of every {@link ModuleScreen}, in order. */
 public final class Modules {
@@ -17,6 +19,7 @@ public final class Modules {
 
     static {
         register(new Module("skills", "Skills", Icons.BOOK, SkillTreeScreen::new));
+        register(new Module("quests", "Quest Log", ItemIcon.getItemIcon(Items.WRITABLE_BOOK), QuestLogScreen::new));
     }
 
     private Modules() {}

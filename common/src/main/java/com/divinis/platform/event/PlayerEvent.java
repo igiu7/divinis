@@ -30,6 +30,20 @@ public abstract class PlayerEvent extends Event {
         }
     }
 
+    /** The player is back in the world after dying (or coming back from the End: endConquered). */
+    public static class PlayerRespawnEvent extends PlayerEvent {
+        private final boolean endConquered;
+
+        public PlayerRespawnEvent(Player player, boolean endConquered) {
+            super(player);
+            this.endConquered = endConquered;
+        }
+
+        public boolean isEndConquered() {
+            return endConquered;
+        }
+    }
+
     /** How fast the player breaks a block (newSpeed starts as vanilla's). */
     public static class BreakSpeed extends PlayerEvent {
         private final BlockState state;

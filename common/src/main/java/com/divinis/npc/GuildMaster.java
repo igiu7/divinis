@@ -56,9 +56,8 @@ public class GuildMaster extends PathfinderMob {
     protected InteractionResult mobInteract(Player player, InteractionHand hand) {
         if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         if (player instanceof ServerPlayer sp) {
-            var ranking = com.divinis.dungeon.DungeonData.get(sp.getServer()).top(10).stream()
-                    .map(c -> new GuildMasterOpenPayload.RankRow(c.names(), c.ticks(), c.players())).toList();
-            PacketDistributor.sendToPlayer(sp, new GuildMasterOpenPayload(getId(), ranking));
+            com.divinis.quest.QuestService.sync(sp);
+            PacketDistributor.sendToPlayer(sp, new GuildMasterOpenPayload(getId()));
             level().broadcastEntityEvent(this, EVENT_GREET);
         }
         return InteractionResult.sidedSuccess(level().isClientSide);

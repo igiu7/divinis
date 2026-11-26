@@ -58,7 +58,7 @@ import com.divinis.platform.event.ServerStoppingEvent;
 import com.divinis.platform.event.ServerTickEvent;
 
 /**
- * Dungeon runs. The Guild Master (or an admin) opens a portal for 30 seconds; up to 5 players who walk in form the
+ * Dungeon runs. An admin opens a portal for 30 seconds; up to 5 players who walk in form the
  * party. Every run gets its own slot of the dungeon world (dimension divinis:dungeons, empty void), far from the
  * others, where its dungeon is built: the Labyrinth (Labyrinth, LabyrinthBuilder) - a maze of rooms with monsters,
  * Create puzzles that give keys, locked vaults full of bronze age loot and, behind the Minotaur Key's gate, the
@@ -98,7 +98,6 @@ public final class DungeonService {
     static final class Run {
         final int id, slot;
         final BlockPos origin;
-        @Nullable final UUID guildMaster;
         final Map<UUID, String> members = new LinkedHashMap<>(); // everyone who went in, with his name
         final Set<UUID> present = new HashSet<>();               // who is inside now
         final ServerBossEvent bar = new ServerBossEvent(Component.literal("Labyrinth"), BossEvent.BossBarColor.BLUE,
@@ -113,11 +112,10 @@ public final class DungeonService {
         /** who has opened the boss's reward chest */
         final Set<UUID> looted = new HashSet<>();
 
-        Run(int id, int slot, BlockPos origin, @Nullable UUID guildMaster) {
+        Run(int id, int slot, BlockPos origin) {
             this.id = id;
             this.slot = slot;
             this.origin = origin;
-            this.guildMaster = guildMaster;
         }
 
         BoundingBox bounds() {
@@ -167,27 +165,8 @@ public final class DungeonService {
 
     // ------------------------------------------------------------------ opening
 
-    /** The Guild Master opens a portal next to him for the player who asked. */
-    public static void openFromGuildMaster(ServerPlayer player, Entity guildMaster) {
-        if (!guildMaster.isAlive() || guildMaster.level() != player.level() || guildMaster.distanceToSqr(player) > 10 * 10) return;
-        for (Run r : RUNS.values()) {
-            if (guildMaster.getUUID().equals(r.guildMaster) && r.portalOpen) {
-                player.displayClientMessage(Msg.text("A portal is already open - hurry in!", ChatFormatting.GOLD), true);
-                return;
-            }
-        }
-        // beside the Guild Master, on the side away from his right hand, facing the player
-        Vec3 toPlayer = player.position().subtract(guildMaster.position()).multiply(1, 0, 1);
-        if (toPlayer.lengthSqr() < 0.01) toPlayer = new Vec3(0, 0, 1);
-        toPlayer = toPlayer.normalize();
-        Vec3 side = new Vec3(-toPlayer.z, 0, toPlayer.x);
-        Vec3 at = guildMaster.position().add(side.scale(3.5)).add(toPlayer.scale(0.5));
-        float yaw = (float) (Mth.atan2(toPlayer.z, toPlayer.x) * Mth.RAD_TO_DEG) - 90.0F;
-        open(player, (ServerLevel) player.level(), at, yaw, guildMaster.getUUID());
-    }
-
-    /** Opens a portal at a place (Guild Master or admin command). Returns false if the dungeon world is missing. */
-    public static boolean open(ServerPlayer opener, ServerLevel level, Vec3 at, float yaw, @Nullable UUID guildMaster) {
+    /** Opens a portal at a place (the admin command). Returns false if the dungeon world is missing. */
+    public static boolean open(ServerPlayer opener, ServerLevel level, Vec3 at, float yaw) {
         MinecraftServer server = level.getServer();
         ServerLevel world = world(server);
         if (world == null) {
@@ -198,7 +177,7 @@ public final class DungeonService {
         Set<Integer> used = new HashSet<>();
         for (Run r : RUNS.values()) used.add(r.slot);
         while (used.contains(slot)) slot++;
-        Run run = new Run(++nextId, slot, new BlockPos(slot * SLOT_SPACING + SLOT_SPACING / 2, FLOOR_Y, 0), guildMaster);
+        Run run = new Run(++nextId, slot, new BlockPos(slot * SLOT_SPACING + SLOT_SPACING / 2, FLOOR_Y, 0));
         DungeonData.get(server).markSlot(slot, true);
         run.lab = Labyrinth.generate(run.origin, run.id, world.getRandom());
         LabyrinthBuilder.build(world, run.lab, world.getRandom());

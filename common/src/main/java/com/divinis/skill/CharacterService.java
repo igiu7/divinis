@@ -51,7 +51,7 @@ public final class CharacterService {
     // ------------------------------------------------------------------ XP
 
     /** Adds XP to the character (already scaled) and announces a new level; source names where it came from. */
-    static void addXp(ServerPlayer player, double amount, String source) {
+    public static void addXp(ServerPlayer player, double amount, String source) {
         CharacterData data = data(player);
         int before = data.level();
         if (before >= SkillCurve.MAX_LEVEL) return;

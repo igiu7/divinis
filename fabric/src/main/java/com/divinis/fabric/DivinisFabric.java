@@ -66,6 +66,8 @@ public final class DivinisFabric implements ModInitializer {
         });
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> post(new PlayerEvent.PlayerLoggedInEvent(handler.player)));
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> post(new PlayerEvent.PlayerLoggedOutEvent(handler.player)));
+        net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) ->
+                post(new PlayerEvent.PlayerRespawnEvent(newPlayer, alive)));
         dev.architectury.event.events.common.PlayerEvent.CRAFT_ITEM.register((player, crafted, inventory) ->
                 post(new PlayerEvent.ItemCraftedEvent(player, crafted, inventory)));
         dev.architectury.event.events.common.PlayerEvent.SMELT_ITEM.register((player, smelted) ->

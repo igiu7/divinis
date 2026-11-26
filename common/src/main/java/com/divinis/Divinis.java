@@ -33,6 +33,8 @@ public final class Divinis {
         Config.load();
         DivinisNet.register();
         SkillAttachments.register();
+        com.divinis.quest.QuestService.register();
+        com.divinis.city.CityService.register();
         com.divinis.registry.ModParticles.register(bus);
         com.divinis.registry.ModIngots.init();        // rare-metal ingots
         com.divinis.skill.SkillBook.init();            // skill books

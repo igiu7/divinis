@@ -6,14 +6,16 @@ An RPG mod for Minecraft 1.21.1, for NeoForge and Fabric.
 
 - **15 bosses**, each with its own arena, phases, attacks and screen effects. They range from the Minotaur and the
   Golem to the Lich King Azramond, the dragon Ignaroth and the Nameless Creator.
-- **Dungeons**: the Labyrinth with puzzles, vaults, keys and an arena. The Guild Master opens its portal.
+- **Dungeons**: the Labyrinth with puzzles, vaults, keys and an arena.
 - **Fishing**: a timing minigame, fishing pools and 40 rods with their own perks.
 - **Character**: levels up to 60, three skill trees (Strength, Dexterity, Intelligence) and a fourth slot for one of
   10 skill books. Each book has its own skills.
 - **Smithing**: heat ingots in the Smelting Forge, forge weapon parts on the anvil, then pour and quench them at the
   cauldron.
 - **Rare metals**: 10 metals, each with weapons, tools and 7 armour sets.
-- **Guild Master**: quests, a shop and a ranking.
+- **Starting city**: a large walled medieval town, generated with a new world: gates, towers, a square with a
+  fountain, a cathedral, shops and halls ready for NPCs, and districts of houses. Players join and respawn there.
+- **Guild Master**: quests to take and turn in for emeralds and XP, and a quest log to follow them.
 - **Item rarity**: every item in the game gets a rarity tier.
 
 ## Requirements

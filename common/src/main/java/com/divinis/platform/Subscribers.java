@@ -27,5 +27,7 @@ public final class Subscribers {
             com.divinis.skill.PerkEvents.class,
             com.divinis.skill.SkillEffects.class,
             com.divinis.skill.SkillEvents.class,
+            com.divinis.quest.QuestService.class,
+            com.divinis.city.CityService.class,
     };
 }

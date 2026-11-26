@@ -11,12 +11,6 @@ public final class DivinisNet {
 
     public static void register() {
         PayloadRegistrar registrar = new PayloadRegistrar();
-        registrar.playToServer(DungeonOpenPayload.TYPE, DungeonOpenPayload.CODEC, (payload, ctx) -> ctx.enqueueWork(() -> {
-            if (ctx.player() instanceof ServerPlayer player
-                    && player.level().getEntity(payload.guildMasterId()) instanceof com.divinis.npc.GuildMaster gm) {
-                com.divinis.dungeon.DungeonService.openFromGuildMaster(player, gm);
-            }
-        }));
         registrar.playToServer(DrawPayloads.Submit.TYPE, DrawPayloads.Submit.CODEC, (payload, ctx) -> ctx.enqueueWork(() -> {
             if (ctx.player() instanceof ServerPlayer player && player.level().getEntity(payload.boss()) instanceof com.divinis.boss.Nocthariel boss) {
                 boss.drawingSubmitted(player, payload.strokes());
@@ -38,6 +32,8 @@ public final class DivinisNet {
                     (payload, ctx) -> ctx.enqueueWork(() -> com.divinis.client.ClientCharacter.receive(payload)));
             registrar.playToClient(ForgeKnownPayload.TYPE, ForgeKnownPayload.CODEC, ClientHandlers::onForgeKnown);
             registrar.playToClient(GuildMasterOpenPayload.TYPE, GuildMasterOpenPayload.CODEC, ClientHandlers::onGuildMasterOpen);
+            registrar.playToClient(QuestPayload.TYPE, QuestPayload.CODEC,
+                    (payload, ctx) -> ctx.enqueueWork(() -> com.divinis.client.ClientQuests.receive(payload)));
             registrar.playToClient(TelegraphPayload.TYPE, TelegraphPayload.CODEC,
                     (payload, ctx) -> ctx.enqueueWork(() -> com.divinis.client.TelegraphRenderer.receive(payload)));
             registrar.playToClient(FireFxPayload.TYPE, FireFxPayload.CODEC,
@@ -73,6 +69,7 @@ public final class DivinisNet {
             registrar.playToClient(CharacterPayload.TYPE, CharacterPayload.CODEC, (payload, ctx) -> {});
             registrar.playToClient(ForgeKnownPayload.TYPE, ForgeKnownPayload.CODEC, (payload, ctx) -> {});
             registrar.playToClient(GuildMasterOpenPayload.TYPE, GuildMasterOpenPayload.CODEC, (payload, ctx) -> {});
+            registrar.playToClient(QuestPayload.TYPE, QuestPayload.CODEC, (payload, ctx) -> {});
             registrar.playToClient(TelegraphPayload.TYPE, TelegraphPayload.CODEC, (payload, ctx) -> {});
             registrar.playToClient(FireFxPayload.TYPE, FireFxPayload.CODEC, (payload, ctx) -> {});
             registrar.playToClient(SlashPayload.TYPE, SlashPayload.CODEC, (payload, ctx) -> {});

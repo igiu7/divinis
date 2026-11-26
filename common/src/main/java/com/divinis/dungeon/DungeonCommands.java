@@ -18,7 +18,7 @@ import com.divinis.platform.event.RegisterCommandsEvent;
 
 /**
  *   /divinis dungeon leave             give up the run and go home
- *   /divinis admin dungeon portal      open a dungeon portal in front of you (as the Guild Master does)
+ *   /divinis admin dungeon portal      open a dungeon portal in front of you
  *   /divinis admin dungeon endall      end every run, everyone inside goes home
  */
 @EventBusSubscriber(modid = Divinis.MODID)
@@ -52,7 +52,7 @@ public final class DungeonCommands {
         Vec3 look = player.getLookAngle().multiply(1, 0, 1);
         look = look.lengthSqr() < 0.01 ? new Vec3(0, 0, 1) : look.normalize();
         Vec3 at = player.position().add(look.scale(4));
-        boolean ok = DungeonService.open(player, (ServerLevel) player.level(), at, player.getYRot() + 180, null);
+        boolean ok = DungeonService.open(player, (ServerLevel) player.level(), at, player.getYRot() + 180);
         return ok ? 1 : 0;
     }
 

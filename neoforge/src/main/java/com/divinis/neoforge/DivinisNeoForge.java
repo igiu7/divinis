@@ -76,6 +76,8 @@ public final class DivinisNeoForge {
                 post(new PlayerEvent.PlayerLoggedInEvent(e.getEntity())));
         bus.addListener((net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent e) ->
                 post(new PlayerEvent.PlayerLoggedOutEvent(e.getEntity())));
+        bus.addListener((net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerRespawnEvent e) ->
+                post(new PlayerEvent.PlayerRespawnEvent(e.getEntity(), e.isEndConquered())));
         bus.addListener((net.neoforged.neoforge.event.entity.player.PlayerEvent.BreakSpeed e) -> {
             if (!heard(PlayerEvent.BreakSpeed.class)) return;
             PlayerEvent.BreakSpeed d = post(new PlayerEvent.BreakSpeed(e.getEntity(), e.getState(), e.getNewSpeed(),

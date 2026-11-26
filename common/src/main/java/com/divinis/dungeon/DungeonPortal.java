@@ -13,7 +13,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 /**
- * A round portal, 3 blocks tall. The entrance one stands by the Guild Master for 30 seconds and takes whoever walks
+ * A round portal, 3 blocks tall. The entrance one stands where it was opened for 30 seconds and takes whoever walks
  * into it to the dungeon; the exit one appears in the dungeon once the boss is dead and takes the party home.
  * It is never saved: after a restart the runs are over anyway (DungeonService).
  */

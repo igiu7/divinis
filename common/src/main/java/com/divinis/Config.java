@@ -44,6 +44,20 @@ public class Config {
                     "fish are caught with a fishing rod (which also gives Hunter XP). 1 = always, as in vanilla")
             .defineInRange("fishing.fishMobDropChance", 0.25, 0.0, 1.0);
 
+    // ---------------------------------------------------------------- the starting city
+
+    public static final ModConfigSpec.BooleanValue CITY_BUILD = BUILDER
+            .comment("Build the starting city (a walled medieval town) near the world spawn when a new world starts. It is",
+                    "built a little every tick and takes about a minute; /divinis admin city status shows how far it is.",
+                    "In a world already played it is not built by itself: /divinis admin city here builds it round you")
+            .define("city.build", true);
+    public static final ModConfigSpec.BooleanValue CITY_RESPAWN = BUILDER
+            .comment("Players always respawn in the city's square (beds are ignored), and join there the first time")
+            .define("city.respawnInCity", true);
+    public static final ModConfigSpec.BooleanValue CITY_SAFE = BUILDER
+            .comment("Hostile mobs do not spawn naturally inside the city's walls")
+            .define("city.noHostileSpawns", true);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     /** Reads config/divinis-common.toml (and writes it back complete). */
