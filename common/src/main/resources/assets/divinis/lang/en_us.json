@@ -711,5 +711,6 @@
   "key.divinis.skills": "Open the skill trees",
   "key.categories.divinis": "Divinis",
   "itemGroup.divinis": "Divinis",
-  "particle.divinis.steam": "Steam"
+  "particle.divinis.steam": "Steam",
+  "entity.divinis.nameless_creator": "The Nameless Creator"
 }

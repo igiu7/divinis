@@ -12,4 +12,7 @@ dependencies {
     modApi "dev.architectury:architectury:${rootProject.architectury_api_version}"
     modCompileOnly("dev.ftb.mods:ftb-library:${rootProject.ftb_library_version}") { transitive = false }
     modCompileOnly("maven.modrinth:diegesis-api:${rootProject.diegesis_fabric}") { transitive = false }
+    // only so that Loom remaps Diegesis' Fabric jar with its whole class hierarchy (the remapped jar is shared with
+    // :fabric); the common code must not use Fabric API
+    modCompileOnly "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
 }

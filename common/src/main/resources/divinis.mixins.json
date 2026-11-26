@@ -6,7 +6,8 @@
   "mixins": [
     "FishingHookAccessor",
     "FishingHookMixin",
-    "ItemStackDurabilityMixin"
+    "LevelPartsMixin",
+    "ServerLevelPartsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -17,6 +18,7 @@
     "LivingEntityRendererMixin",
     "CameraAccessor",
     "LevelRendererSkyMixin",
-    "ParticleFreezeMixin"
+    "ParticleFreezeMixin",
+    "ClientLevelPartsMixin"
   ]
 }

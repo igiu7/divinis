@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors}"
+  ],
+  "license": "${mod_license}",
+  "contact": {
+    "sources": "https://github.com/igiu7/divinis"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.divinis.fabric.DivinisFabric"
+    ],
+    "client": [
+      "com.divinis.fabric.DivinisFabricClient"
+    ]
+  },
+  "mixins": [
+    "divinis.mixins.json",
+    "divinis-fabric.mixins.json"
+  ],
+  "accessWidener": "divinis.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.16",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21",
+    "fabric-api": "*",
+    "architectury": ">=13.0.0",
+    "ftblibrary": ">=2101.1.0",
+    "diegesis": ">=1.0.0-beta.17"
+  }
+}

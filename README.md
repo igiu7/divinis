@@ -1,6 +1,6 @@
 # Divinis
 
-An RPG mod for Minecraft 1.21.1 (NeoForge).
+An RPG mod for Minecraft 1.21.1, for NeoForge and Fabric.
 
 ## Features
 
@@ -18,7 +18,7 @@ An RPG mod for Minecraft 1.21.1 (NeoForge).
 
 ## Requirements
 
-- NeoForge 21.1 for Minecraft 1.21.1
+- Minecraft 1.21.1 with NeoForge 21.1, or with Fabric Loader 0.16 and [Fabric API](https://modrinth.com/mod/fabric-api)
 - [Diegesis](https://modrinth.com/mod/diegesis-api)
 - [FTB Library](https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge)
 - [Architectury API](https://modrinth.com/mod/architectury-api)
@@ -29,7 +29,8 @@ An RPG mod for Minecraft 1.21.1 (NeoForge).
 ./gradlew build
 ```
 
-The jar is written to `build/libs`.
+The NeoForge jar is written to `neoforge/build/libs`, the Fabric jar to `fabric/build/libs`. The shared code is in
+`common` (built with [Architectury](https://docs.architectury.dev/)).
 
 ## License
 

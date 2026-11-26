@@ -49,6 +49,8 @@ public final class Divinis {
         com.divinis.forge.CauldronStation.register();   // the cauldron: pouring, filling, quenching (Diegesis station)
         com.divinis.registry.ModEntities.register(bus);
         com.divinis.registry.ModTabs.register(bus);
+        com.divinis.platform.registry.DeferredRegister.registerQueued();
+        com.divinis.registry.ModEntities.registerAttributes();
         DivinisBus.register(Services.dist(), Subscribers.ALL);
     }
 

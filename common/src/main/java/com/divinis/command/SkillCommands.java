@@ -31,6 +31,7 @@ import net.minecraft.server.level.ServerPlayer;
  * /divinis skills admin xp <player> <amount>    - give XP
  * The skill screen (client.gui.SkillTreeScreen) runs these.
  */
+@com.divinis.platform.bus.EventBusSubscriber
 public final class SkillCommands {
     private SkillCommands() {}
 

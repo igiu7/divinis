@@ -337,6 +337,10 @@ public final class ModEntities {
 
     public static void register(IEventBus bus) {
         ENTITY_TYPES.register(bus);
+    }
+
+    /** The creatures' attributes (once the entity types are registered). */
+    public static void registerAttributes() {
         dev.architectury.registry.level.entity.EntityAttributeRegistry.register(GUILD_MASTER::get, com.divinis.npc.GuildMaster::createAttributes);
         dev.architectury.registry.level.entity.EntityAttributeRegistry.register(MINOTAUR::get, com.divinis.boss.Minotaur::createAttributes);
         dev.architectury.registry.level.entity.EntityAttributeRegistry.register(GOLEM::get, com.divinis.boss.Golem::createAttributes);

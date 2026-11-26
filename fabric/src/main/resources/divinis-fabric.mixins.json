@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.divinis.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LivingEntityMixin",
+    "EntityMixin",
+    "BlockMixin",
+    "PlayerMixin",
+    "MobMixin",
+    "AnimalMixin",
+    "ThrownEnderpearlMixin",
+    "ChorusFruitItemMixin",
+    "ItemStackDurabilityMixin"
+  ],
+  "client": [
+    "client.GuiGraphicsDrawStringMixin",
+    "client.GuiMixin",
+    "client.CameraInvoker",
+    "client.GameRendererMixin",
+    "client.FogRendererMixin",
+    "client.ItemInHandRendererMixin",
+    "client.KeyboardHandlerMixin",
+    "client.LocalPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

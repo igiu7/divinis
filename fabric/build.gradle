@@ -42,6 +42,9 @@ processResources {
                  mod_description: rootProject.mod_description, minecraft_version: rootProject.minecraft_version]
     inputs.properties props
     filesMatching("fabric.mod.json") { expand props }
+    // the access widener lives in common; the dev run (and the jar) need it next to fabric.mod.json
+    from(project(":common").file("src/main/resources/divinis.accesswidener"))
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 shadowJar {

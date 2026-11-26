@@ -22,10 +22,14 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
  * added with register(name, supplier) and the register itself with register(bus) during the mod's start-up.
  */
 public class DeferredRegister<T> {
+    private static final List<DeferredRegister<?>> QUEUED = new ArrayList<>();
+
+    private final ResourceKey<? extends Registry<T>> registry;
     private final dev.architectury.registry.registries.DeferredRegister<T> inner;
     private final List<DeferredHolder<T, ? extends T>> entries = new ArrayList<>();
 
     protected DeferredRegister(ResourceKey<? extends Registry<T>> registry, String modid) {
+        this.registry = registry;
         @SuppressWarnings("unchecked")
         ResourceKey<Registry<T>> key = (ResourceKey<Registry<T>>) registry;
         this.inner = dev.architectury.registry.registries.DeferredRegister.create(modid, key);
@@ -57,9 +61,20 @@ public class DeferredRegister<T> {
         return Collections.unmodifiableList(entries);
     }
 
-    /** Registers the register (the bus is the mod's, kept for the loaders that need it). */
+    /** Queues the register (the bus is the mod's, kept for the loaders that need it); see registerQueued. */
     public void register(IEventBus bus) {
-        inner.register();
+        QUEUED.add(this);
+    }
+
+    /**
+     * Registers the queued registers, blocks first, then items, then the rest (a block entity type needs its blocks):
+     * NeoForge orders the registries itself, Fabric fills them in the order they are registered.
+     */
+    public static void registerQueued() {
+        List<DeferredRegister<?>> order = new ArrayList<>(QUEUED);
+        order.sort(java.util.Comparator.comparingInt(DeferredRegister::rank));
+        for (DeferredRegister<?> r : order) r.inner.register();
+        QUEUED.clear();
     }
 
     public static class Items extends DeferredRegister<Item> {
@@ -99,6 +114,15 @@ public class DeferredRegister<T> {
                                                                BlockBehaviour.Properties props) {
             return register(name, () -> factory.apply(props));
         }
+    }
+
+    /** What blocks and items may take while they are made comes first. */
+    private int rank() {
+        if (registry.equals(Registries.ARMOR_MATERIAL) || registry.equals(Registries.PARTICLE_TYPE) || registry.equals(Registries.SOUND_EVENT)
+                || registry.equals(Registries.MOB_EFFECT)) return 0;
+        if (registry.equals(Registries.BLOCK)) return 1;
+        if (registry.equals(Registries.ITEM)) return 2;
+        return 3;
     }
 
     List<DeferredHolder<T, ? extends T>> entriesList() {

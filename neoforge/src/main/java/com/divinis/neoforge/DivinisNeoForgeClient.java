@@ -65,6 +65,7 @@ final class DivinisNeoForgeClient {
     }
 
     static void init(IEventBus modBus) {
+        com.divinis.client.ClientSubscribers.init();
         registration(modBus);
         game(NeoForge.EVENT_BUS);
     }
