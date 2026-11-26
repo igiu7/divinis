@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,6 +30,11 @@ public interface DivinisHooks {
     /** Whether a creature counts as an animal for the skill books' perks, beside vanilla's animals. */
     default boolean isAnimal(Entity entity) {
         return false;
+    }
+
+    /** Whether two players are in one party (the party skills: the royal rod, Lecture); by default a vanilla /team. */
+    default boolean sameParty(Player a, Player b) {
+        return a.getTeam() != null && a.isAlliedTo(b);
     }
 
     /** XP for picking a plant by hand (the world's own bushes), or null for Divinis' own rules. */

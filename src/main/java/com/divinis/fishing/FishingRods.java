@@ -3,14 +3,10 @@ package com.divinis.fishing;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 import com.divinis.registry.ItemRarity;
 import com.divinis.registry.ModBlocks;
 
-import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
-import dev.ftb.mods.ftbteams.api.Team;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
@@ -259,20 +255,10 @@ public final class FishingRods {
 
     /** Whether someone of the player's party (or they) fishes with the royal rod within ROYAL_RANGE blocks. */
     private static boolean royalNearby(Player player) {
-        Optional<UUID> team = partyOf(player);
         for (Player other : player.level().getEntitiesOfClass(Player.class, player.getBoundingBox().inflate(ROYAL_RANGE))) {
             if (other.fishing == null || stats(held(other)).gift() != Gift.ROYAL) continue;
-            if (other == player || (team.isPresent() && team.equals(partyOf(other)))) return true;
+            if (other == player || com.divinis.Divinis.hooks().sameParty(player, other)) return true;
         }
         return false;
-    }
-
-    private static Optional<UUID> partyOf(Player player) {
-        try {
-            return FTBTeamsAPI.api().getManager().getTeamForPlayerID(player.getUUID())
-                    .filter(Team::isPartyTeam).map(Team::getId);
-        } catch (RuntimeException e) {
-            return Optional.empty();
-        }
     }
 }

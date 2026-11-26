@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import com.mojang.authlib.GameProfile;
 
-import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
@@ -26,11 +25,6 @@ public final class Msg {
     public static void toPlayer(MinecraftServer server, UUID id, Component c) {
         ServerPlayer p = server.getPlayerList().getPlayer(id);
         if (p != null) p.sendSystemMessage(c);
-    }
-
-    public static void toTeam(UUID teamId, Component c) {
-        FTBTeamsAPI.api().getManager().getTeamByID(teamId)
-                .ifPresent(t -> t.getOnlineMembers().forEach(p -> p.sendSystemMessage(c)));
     }
 
     public static void broadcast(MinecraftServer server, Component c) {

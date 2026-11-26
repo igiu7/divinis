@@ -21,7 +21,6 @@ An RPG mod for Minecraft 1.21.1 (NeoForge).
 - NeoForge 21.1 for Minecraft 1.21.1
 - [Diegesis](https://modrinth.com/mod/diegesis-api)
 - [FTB Library](https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge)
-- [FTB Teams](https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge)
 - [Architectury API](https://modrinth.com/mod/architectury-api)
 
 ## Building

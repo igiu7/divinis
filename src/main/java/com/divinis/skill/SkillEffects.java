@@ -17,8 +17,6 @@ import com.divinis.mixin.FishingHookAccessor;
 import com.divinis.net.SkillFxPayload;
 import com.divinis.Divinis;
 
-import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
-import dev.ftb.mods.ftbteams.api.Team;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -482,12 +480,9 @@ public final class SkillEffects {
     // ------------------------------------------------------------------ scholar
 
     private static String lecture(ServerPlayer player) {
-        Optional<UUID> party = FTBTeamsAPI.api().getManager().getTeamForPlayerID(player.getUUID())
-                .filter(Team::isPartyTeam).map(Team::getId);
         int taught = 0;
         for (ServerPlayer p : player.serverLevel().getEntitiesOfClass(ServerPlayer.class, player.getBoundingBox().inflate(8))) {
-            boolean same = p == player || (party.isPresent() && party.equals(FTBTeamsAPI.api().getManager()
-                    .getTeamForPlayerID(p.getUUID()).filter(Team::isPartyTeam).map(Team::getId)));
+            boolean same = p == player || com.divinis.Divinis.hooks().sameParty(player, p);
             if (!same) continue;
             CharacterData data = CharacterService.data(p);
             data.buffs.put(SkillBooks.LECTURE, System.currentTimeMillis() + 5L * 60 * 1000);

@@ -44,13 +44,6 @@ ordering="NONE"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
-modId="ftbteams"
-type="required"
-versionRange="[2101.1.0,)"
-ordering="NONE"
-side="BOTH"
-
-[[dependencies.${mod_id}]]
 modId="architectury"
 type="required"
 versionRange="[13.0.0,)"

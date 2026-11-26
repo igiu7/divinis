@@ -90,7 +90,6 @@ configurations {
 
 dependencies {
     implementation "dev.ftb.mods:ftb-library-neoforge:2101.1.37"
-    implementation "dev.ftb.mods:ftb-teams-neoforge:2101.1.11"
     implementation "dev.architectury:architectury-neoforge:13.0.8"
     // Diegesis (MIT, required): the in-world forging stations (forge.AnvilForge, SmeltingForge, CauldronStation)
     // (from Modrinth: diegesis-api 1.0.0-beta.17+1.21.1-neoforge; players install it themselves, it is required)
