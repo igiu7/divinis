@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "III",
+    " | ",
+    " | "
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:valorium_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:valorium_pickaxe",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "I",
+    "|",
+    "|"
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:mithril_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:mithril_shovel",
+    "count": 1
+  }
+}

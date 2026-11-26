@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "I",
+    "|",
+    "|"
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:crimsonite_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:crimsonite_shovel",
+    "count": 1
+  }
+}

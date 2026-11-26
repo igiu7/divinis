@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "III",
+    " | ",
+    " | "
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:adamantite_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:adamantite_pickaxe",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "I",
+    "|",
+    "|"
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:etherite_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:etherite_shovel",
+    "count": 1
+  }
+}

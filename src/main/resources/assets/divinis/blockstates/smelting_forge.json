@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "facing=north,fire=0,formed=false": {
+      "model": "divinis:block/smelting_forge"
+    },
+    "facing=north,fire=0,formed=true": {
+      "model": "divinis:block/smelting_forge"
+    },
+    "facing=north,fire=1,formed=false": {
+      "model": "divinis:block/smelting_forge"
+    },
+    "facing=north,fire=1,formed=true": {
+      "model": "divinis:block/smelting_forge"
+    },
+    "facing=north,fire=2,formed=false": {
+      "model": "divinis:block/smelting_forge"
+    },
+    "facing=north,fire=2,formed=true": {
+      "model": "divinis:block/smelting_forge"
+    },
+    "facing=east,fire=0,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 90
+    },
+    "facing=east,fire=0,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 90
+    },
+    "facing=east,fire=1,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 90
+    },
+    "facing=east,fire=1,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 90
+    },
+    "facing=east,fire=2,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 90
+    },
+    "facing=east,fire=2,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 90
+    },
+    "facing=south,fire=0,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 180
+    },
+    "facing=south,fire=0,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 180
+    },
+    "facing=south,fire=1,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 180
+    },
+    "facing=south,fire=1,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 180
+    },
+    "facing=south,fire=2,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 180
+    },
+    "facing=south,fire=2,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 180
+    },
+    "facing=west,fire=0,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 270
+    },
+    "facing=west,fire=0,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 270
+    },
+    "facing=west,fire=1,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 270
+    },
+    "facing=west,fire=1,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 270
+    },
+    "facing=west,fire=2,formed=false": {
+      "model": "divinis:block/smelting_forge",
+      "y": 270
+    },
+    "facing=west,fire=2,formed=true": {
+      "model": "divinis:block/smelting_forge",
+      "y": 270
+    }
+  }
+}

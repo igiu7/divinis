@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "divinis:blacksteel_shovel",
+    "divinis:moonsilver_shovel",
+    "divinis:crimsonite_shovel",
+    "divinis:mithril_shovel",
+    "divinis:etherite_shovel",
+    "divinis:adamantite_shovel",
+    "divinis:dragonsteel_shovel",
+    "divinis:divinite_shovel",
+    "divinis:valorium_shovel",
+    "divinis:voidsteel_shovel"
+  ]
+}

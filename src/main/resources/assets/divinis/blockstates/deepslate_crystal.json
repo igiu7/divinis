@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "divinis:block/deepslate_crystal" },
+      { "model": "divinis:block/deepslate_crystal", "y": 90 },
+      { "model": "divinis:block/deepslate_crystal", "y": 180 },
+      { "model": "divinis:block/deepslate_crystal", "y": 270 }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "BD",
+    "DB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bricks"
+    },
+    "D": {
+      "item": "minecraft:deepslate_bricks"
+    }
+  },
+  "result": {
+    "id": "divinis:forge_bricks",
+    "count": 4
+  }
+}

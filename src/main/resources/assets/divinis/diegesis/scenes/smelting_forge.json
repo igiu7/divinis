@@ -1,0 +1,275 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Pocky-l/diegesis/main/docs/schema/scene.schema.json",
+  "$comment": "The formed Smelting Forge (forge.SmeltingForge, client.forge.SmeltingForgeBehavior), at its controller - the firebox at the front of the bottom layer, facing north (front at z 0). The furnace reaches x -16..32, z 0..48 and up; the charging mouth above the firebox (y 16..32) opens on the hearth, where the six ingots lie lengthwise (y 16); the coal lies at the firebox's mouth (y 4.5); the bellows stands on the ground beside the forge (-x, the screen's right), its nozzle in the tuyere. The camera frames all of it above the inventory drawer (checked by rendering this view).",
+  "idle_visible": true,
+  "camera": {
+    "position": [
+      0,
+      30,
+      -46
+    ],
+    "target": [
+      -2,
+      13,
+      10
+    ],
+    "fov": 50
+  },
+  "interface": {
+    "hide_player": true,
+    "inventory_panel": false,
+    "hover_outline": false
+  },
+  "inventory_drawer": {
+    "side": "bottom",
+    "style": "minimal",
+    "always_open": true,
+    "compact": true,
+    "background": "#00000000",
+    "slot_color": "#8C1E140C"
+  },
+  "nodes": [
+    {
+      "id": "ingot_0",
+      "pos": [
+        11.5,
+        16.05,
+        9
+      ],
+      "slot": {
+        "slot": "ingots[0]",
+        "display": "flat",
+        "size": 4.5,
+        "item_size": 7,
+        "counts": "never",
+        "idle_highlight": 0.35,
+        "ghost": [
+          "divinis:blacksteel_ingot",
+          "divinis:moonsilver_ingot",
+          "divinis:crimsonite_ingot",
+          "divinis:mithril_ingot",
+          "divinis:etherite_ingot",
+          "divinis:adamantite_ingot",
+          "divinis:dragonsteel_ingot",
+          "divinis:divinite_ingot",
+          "divinis:valorium_ingot",
+          "divinis:voidsteel_ingot"
+        ]
+      },
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "ingot_1",
+      "pos": [
+        8.0,
+        16.05,
+        9
+      ],
+      "slot": {
+        "slot": "ingots[1]",
+        "display": "flat",
+        "size": 4.5,
+        "item_size": 7,
+        "counts": "never",
+        "idle_highlight": 0.35,
+        "ghost": [
+          "divinis:blacksteel_ingot",
+          "divinis:moonsilver_ingot",
+          "divinis:crimsonite_ingot",
+          "divinis:mithril_ingot",
+          "divinis:etherite_ingot",
+          "divinis:adamantite_ingot",
+          "divinis:dragonsteel_ingot",
+          "divinis:divinite_ingot",
+          "divinis:valorium_ingot",
+          "divinis:voidsteel_ingot"
+        ]
+      },
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "ingot_2",
+      "pos": [
+        4.5,
+        16.05,
+        9
+      ],
+      "slot": {
+        "slot": "ingots[2]",
+        "display": "flat",
+        "size": 4.5,
+        "item_size": 7,
+        "counts": "never",
+        "idle_highlight": 0.35,
+        "ghost": [
+          "divinis:blacksteel_ingot",
+          "divinis:moonsilver_ingot",
+          "divinis:crimsonite_ingot",
+          "divinis:mithril_ingot",
+          "divinis:etherite_ingot",
+          "divinis:adamantite_ingot",
+          "divinis:dragonsteel_ingot",
+          "divinis:divinite_ingot",
+          "divinis:valorium_ingot",
+          "divinis:voidsteel_ingot"
+        ]
+      },
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "ingot_3",
+      "pos": [
+        11.5,
+        16.05,
+        21
+      ],
+      "slot": {
+        "slot": "ingots[3]",
+        "display": "flat",
+        "size": 4.5,
+        "item_size": 7,
+        "counts": "never",
+        "idle_highlight": 0.35,
+        "ghost": [
+          "divinis:blacksteel_ingot",
+          "divinis:moonsilver_ingot",
+          "divinis:crimsonite_ingot",
+          "divinis:mithril_ingot",
+          "divinis:etherite_ingot",
+          "divinis:adamantite_ingot",
+          "divinis:dragonsteel_ingot",
+          "divinis:divinite_ingot",
+          "divinis:valorium_ingot",
+          "divinis:voidsteel_ingot"
+        ]
+      },
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "ingot_4",
+      "pos": [
+        8.0,
+        16.05,
+        21
+      ],
+      "slot": {
+        "slot": "ingots[4]",
+        "display": "flat",
+        "size": 4.5,
+        "item_size": 7,
+        "counts": "never",
+        "idle_highlight": 0.35,
+        "ghost": [
+          "divinis:blacksteel_ingot",
+          "divinis:moonsilver_ingot",
+          "divinis:crimsonite_ingot",
+          "divinis:mithril_ingot",
+          "divinis:etherite_ingot",
+          "divinis:adamantite_ingot",
+          "divinis:dragonsteel_ingot",
+          "divinis:divinite_ingot",
+          "divinis:valorium_ingot",
+          "divinis:voidsteel_ingot"
+        ]
+      },
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "ingot_5",
+      "pos": [
+        4.5,
+        16.05,
+        21
+      ],
+      "slot": {
+        "slot": "ingots[5]",
+        "display": "flat",
+        "size": 4.5,
+        "item_size": 7,
+        "counts": "never",
+        "idle_highlight": 0.35,
+        "ghost": [
+          "divinis:blacksteel_ingot",
+          "divinis:moonsilver_ingot",
+          "divinis:crimsonite_ingot",
+          "divinis:mithril_ingot",
+          "divinis:etherite_ingot",
+          "divinis:adamantite_ingot",
+          "divinis:dragonsteel_ingot",
+          "divinis:divinite_ingot",
+          "divinis:valorium_ingot",
+          "divinis:voidsteel_ingot"
+        ]
+      },
+      "rotation": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "fuel",
+      "pos": [
+        8,
+        4.6,
+        2.8
+      ],
+      "slot": {
+        "slot": "fuel",
+        "display": "flat",
+        "size": 6,
+        "item_size": 5,
+        "idle_highlight": 0.35,
+        "count_facing": "camera",
+        "ghost": [
+          "minecraft:coal",
+          "minecraft:charcoal",
+          "minecraft:coal_block"
+        ]
+      }
+    },
+    {
+      "$comment": "The bellows, drawn by code as it is worked (SmeltingForgeBehavior): press on it and move the mouse down and up.",
+      "id": "bellows",
+      "pos": [
+        -24.5,
+        0,
+        8
+      ],
+      "strokes": true,
+      "tooltip": "Bellows: hold the left button and move down and up",
+      "collider": {
+        "from": [
+          -10,
+          0,
+          -6.5
+        ],
+        "to": [
+          6,
+          9,
+          6.5
+        ]
+      }
+    }
+  ]
+}

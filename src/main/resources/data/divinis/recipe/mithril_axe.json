@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "II",
+    "I|",
+    " |"
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:mithril_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:mithril_axe",
+    "count": 1
+  }
+}

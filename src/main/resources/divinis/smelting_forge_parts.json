@@ -1,0 +1,555 @@
+{
+ "_readme": "Written by tools/models/build_smelting_forge.py: the formed Smelting Forge's models, one per block cell (cell = its offset from the controller, in blocks, the forge facing north).",
+ "parts": {
+  "c-1_0_0": {
+   "cell": [
+    -1,
+    0,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_0_1": {
+   "cell": [
+    -1,
+    0,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_0_2": {
+   "cell": [
+    -1,
+    0,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_0_0": {
+   "cell": [
+    0,
+    0,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_0_1": {
+   "cell": [
+    0,
+    0,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_0_2": {
+   "cell": [
+    0,
+    0,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_0_0": {
+   "cell": [
+    1,
+    0,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_0_1": {
+   "cell": [
+    1,
+    0,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_0_2": {
+   "cell": [
+    1,
+    0,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_1_0": {
+   "cell": [
+    -1,
+    1,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_1_1": {
+   "cell": [
+    -1,
+    1,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_1_2": {
+   "cell": [
+    -1,
+    1,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_2_0": {
+   "cell": [
+    -1,
+    2,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_2_1": {
+   "cell": [
+    -1,
+    2,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_2_2": {
+   "cell": [
+    -1,
+    2,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_1_0": {
+   "cell": [
+    0,
+    1,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_1_1": {
+   "cell": [
+    0,
+    1,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_1_2": {
+   "cell": [
+    0,
+    1,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_2_0": {
+   "cell": [
+    0,
+    2,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_2_1": {
+   "cell": [
+    0,
+    2,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_2_2": {
+   "cell": [
+    0,
+    2,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_1_0": {
+   "cell": [
+    1,
+    1,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_1_1": {
+   "cell": [
+    1,
+    1,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_1_2": {
+   "cell": [
+    1,
+    1,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_2_0": {
+   "cell": [
+    1,
+    2,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_2_1": {
+   "cell": [
+    1,
+    2,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_2_2": {
+   "cell": [
+    1,
+    2,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_3_0": {
+   "cell": [
+    -1,
+    3,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_3_1": {
+   "cell": [
+    -1,
+    3,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_3_2": {
+   "cell": [
+    -1,
+    3,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_3_0": {
+   "cell": [
+    0,
+    3,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_3_1": {
+   "cell": [
+    0,
+    3,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_3_2": {
+   "cell": [
+    0,
+    3,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_3_0": {
+   "cell": [
+    1,
+    3,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_3_1": {
+   "cell": [
+    1,
+    3,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_3_2": {
+   "cell": [
+    1,
+    3,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_4_0": {
+   "cell": [
+    -1,
+    4,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_4_1": {
+   "cell": [
+    -1,
+    4,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_4_2": {
+   "cell": [
+    -1,
+    4,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_4_0": {
+   "cell": [
+    0,
+    4,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_4_1": {
+   "cell": [
+    0,
+    4,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_4_2": {
+   "cell": [
+    0,
+    4,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_4_0": {
+   "cell": [
+    1,
+    4,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_4_1": {
+   "cell": [
+    1,
+    4,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_4_2": {
+   "cell": [
+    1,
+    4,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_5_0": {
+   "cell": [
+    -1,
+    5,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_5_1": {
+   "cell": [
+    -1,
+    5,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-1_5_2": {
+   "cell": [
+    -1,
+    5,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_5_0": {
+   "cell": [
+    0,
+    5,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_5_1": {
+   "cell": [
+    0,
+    5,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c0_5_2": {
+   "cell": [
+    0,
+    5,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_5_0": {
+   "cell": [
+    1,
+    5,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_5_1": {
+   "cell": [
+    1,
+    5,
+    1
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c1_5_2": {
+   "cell": [
+    1,
+    5,
+    2
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  },
+  "c-2_0_0": {
+   "cell": [
+    -2,
+    0,
+    0
+   ],
+   "cold": true,
+   "smoulder": true,
+   "lit": true
+  }
+ }
+}

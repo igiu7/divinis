@@ -1,0 +1,14 @@
+{
+    "vertex": "divinis:bloom",
+    "fragment": "divinis:bloom",
+    "samplers": [
+        { "name": "Sampler0" }
+    ],
+    "uniforms": [
+        { "name": "Mode", "type": "float", "count": 1, "values": [ 1.0 ] },
+        { "name": "Direction", "type": "float", "count": 2, "values": [ 0.0, 0.0 ] },
+        { "name": "Radius", "type": "float", "count": 1, "values": [ 8.0 ] },
+        { "name": "Color", "type": "float", "count": 3, "values": [ 1.0, 1.0, 1.0 ] },
+        { "name": "Strength", "type": "float", "count": 1, "values": [ 1.0 ] }
+    ]
+}

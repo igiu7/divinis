@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "divinis:item/quick_hand_rod_cast"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "III",
+    " | ",
+    " | "
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:voidsteel_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:voidsteel_pickaxe",
+    "count": 1
+  }
+}

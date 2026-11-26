@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "divinis:item/moonsilver_sabre_blade"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "key=bronze": { "model": "divinis:block/labyrinth_lock_bronze" },
+    "key=silver": { "model": "divinis:block/labyrinth_lock_silver" },
+    "key=gold": { "model": "divinis:block/labyrinth_lock_gold" }
+  }
+}

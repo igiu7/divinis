@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Pocky-l/diegesis/main/docs/schema/scene.schema.json",
+  "$comment": "The cauldron (forge.CauldronStation, client.forge.CauldronBehavior): vanilla's cauldron block, its basin x/z 2..14 from y 4, what it holds at y 9, 12 or 15. The camera looks down into it from the front; a stack let go over the basin is used on it; the piece quenched is drawn at the 'quench' node. The camera is high enough that the middle of the water shows over the front rim at every level, and the piece lifted out stays in the shot.",
+  "idle_visible": false,
+  "camera": {
+    "position": [
+      8,
+      40,
+      -6
+    ],
+    "target": [
+      8,
+      9,
+      8
+    ],
+    "fov": 50
+  },
+  "interface": {
+    "hide_player": true,
+    "inventory_panel": false,
+    "hover_outline": false
+  },
+  "inventory_drawer": {
+    "side": "bottom",
+    "style": "minimal",
+    "always_open": true,
+    "compact": true,
+    "background": "#00000000",
+    "slot_color": "#8C1E140C"
+  },
+  "nodes": [
+    {
+      "id": "cauldron",
+      "takes_items": true,
+      "tooltip": "Let a container go here to pour it in or fill it; dip hot metal here to quench it",
+      "collider": {
+        "from": [
+          1,
+          3,
+          1
+        ],
+        "to": [
+          15,
+          17,
+          15
+        ]
+      }
+    },
+    {
+      "id": "quench",
+      "pickable": false
+    }
+  ]
+}

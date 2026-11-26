@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Pocky-l/diegesis/main/docs/schema/scene.schema.json",
+  "$comment": "The anvil (forge.AnvilForge, client.forge.AnvilBehavior), built on Diegesis. Scene space: the anvil facing north, its face 16 px up, x 3..13 across, z 0..16 along. The camera stands at its long side (+x), the book of recipes hangs on the left (+z); the ingots are laid on the anvil from the inventory below; forging, the camera glances down at the face.",
+  "idle_visible": false,
+  "camera": {
+    "position": [
+      37,
+      50.5,
+      8
+    ],
+    "target": [
+      8,
+      16,
+      8
+    ],
+    "fov": 30,
+    "glances": [
+      {
+        "id": "forge",
+        "position": [
+          16.6,
+          31,
+          8
+        ],
+        "target": [
+          7.4,
+          16,
+          8
+        ],
+        "fov": 50,
+        "time": 0.5,
+        "back_zone": 0,
+        "hint": false
+      }
+    ]
+  },
+  "interface": {
+    "hide_player": true,
+    "inventory_panel": false,
+    "hover_outline": false
+  },
+  "nodes": [
+    {
+      "$comment": "The book of the eras and their parts (client.forge.AnvilBook), hanging on the left as Hands-On Delight's hangs by its stations.",
+      "id": "book_open",
+      "pos": [
+        20,
+        30.7,
+        16.3
+      ],
+      "rotation": [
+        -50,
+        -90,
+        0
+      ],
+      "scale": 0.69,
+      "collider": {
+        "from": [
+          -5.3,
+          -0.4,
+          -3.9
+        ],
+        "to": [
+          5.3,
+          1.4,
+          3.9
+        ]
+      }
+    },
+    {
+      "$comment": "The hot ingots laid on the anvil (heated in the Smelting Forge): their metal is the metal of the part forged.",
+      "id": "ingots",
+      "pos": [
+        8,
+        16,
+        8
+      ],
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "slot": {
+        "slot": "ingots",
+        "display": "flat",
+        "size": 6,
+        "idle_highlight": 0.5,
+        "count_facing": "camera",
+        "ghost": [
+          "divinis:blacksteel_hot_ingot",
+          "divinis:moonsilver_hot_ingot",
+          "divinis:crimsonite_hot_ingot",
+          "divinis:mithril_hot_ingot",
+          "divinis:etherite_hot_ingot",
+          "divinis:adamantite_hot_ingot",
+          "divinis:dragonsteel_hot_ingot",
+          "divinis:divinite_hot_ingot",
+          "divinis:valorium_hot_ingot",
+          "divinis:voidsteel_hot_ingot"
+        ]
+      }
+    },
+    {
+      "$comment": "The work on the anvil's face (y 16), turned to the camera: the hot ingot of pixels, flattened and cut, and the hammer, drawn by code (AnvilBehavior). Strokes: the hammer dragged, the pixels cut.",
+      "id": "work",
+      "pos": [
+        8,
+        16,
+        8
+      ],
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "strokes": true,
+      "hidden": true,
+      "collider": {
+        "from": [
+          -7,
+          -0.5,
+          -5
+        ],
+        "to": [
+          7,
+          12,
+          5
+        ]
+      }
+    }
+  ],
+  "inventory_drawer": {
+    "side": "bottom",
+    "style": "minimal",
+    "always_open": true,
+    "compact": true,
+    "background": "#00000000",
+    "slot_color": "#8C1E140C"
+  }
+}

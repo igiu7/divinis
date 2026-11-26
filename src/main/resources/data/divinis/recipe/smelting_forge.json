@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DID",
+    "DBD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:deepslate_bricks"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "B": {
+      "item": "minecraft:blast_furnace"
+    }
+  },
+  "result": {
+    "id": "divinis:smelting_forge",
+    "count": 1
+  }
+}

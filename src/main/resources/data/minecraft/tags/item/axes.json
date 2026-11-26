@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "divinis:minotaur_axe",
+    "divinis:blacksteel_axe",
+    "divinis:moonsilver_axe",
+    "divinis:crimsonite_axe",
+    "divinis:mithril_axe",
+    "divinis:etherite_axe",
+    "divinis:adamantite_axe",
+    "divinis:dragonsteel_axe",
+    "divinis:divinite_axe",
+    "divinis:valorium_axe",
+    "divinis:voidsteel_axe",
+    "divinis:blacksteel_two_handed_axe",
+    "divinis:moonsilver_two_handed_axe",
+    "divinis:crimsonite_two_handed_axe",
+    "divinis:mithril_two_handed_axe",
+    "divinis:etherite_two_handed_axe",
+    "divinis:adamantite_two_handed_axe",
+    "divinis:dragonsteel_two_handed_axe",
+    "divinis:divinite_two_handed_axe",
+    "divinis:valorium_two_handed_axe",
+    "divinis:voidsteel_two_handed_axe"
+  ]
+}

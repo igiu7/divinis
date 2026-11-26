@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "formed=false": {
+      "model": "divinis:block/forge_bricks"
+    },
+    "formed=true": {
+      "model": "divinis:block/forge_bricks"
+    }
+  }
+}

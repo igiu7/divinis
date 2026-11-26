@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "II",
+    " |",
+    " |"
+  ],
+  "key": {
+    "I": {
+      "item": "divinis:moonsilver_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "divinis:moonsilver_hoe",
+    "count": 1
+  }
+}
